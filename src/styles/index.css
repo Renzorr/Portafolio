@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+  background-color: inherit;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-display: swap;
+  src: url(/font/SpaceGrotesk-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-display: swap;
+  font-weight: 600;
+  src: url(/font/SpaceGrotesk-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-display: swap;
+  font-weight: 700;
+  src: url(/font/SpaceGrotesk-Bold.ttf) format("truetype");
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold tracking-[-0.5px] leading-[clamp(60px,10cqw,90px)] z-10;
+  }
+
+  h2 {
+    @apply text-2xl font-bold tracking-[-0.5px];
+  }
+
+  h3 {
+    @apply text-xl font-bold  tracking-[-1.3px];
+  }
+
+  h4 {
+    @apply text-2lg font-bold tracking-[-0.4px];
+  }
+
+  p {
+    @apply text-lg text-pale-gray;
+  }
+
+  input {
+    @apply w-full border-b-[1px] border-b-pale-gray pl-[22px] focus:border-b-cyan placeholder:text-pale-gray  outline-none;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply text-base uppercase font-bold tracking-[2px] border-b-2 border-b-cyan pb-[10px] hover:text-cyan duration-200;
+  }
+
+  .alert {
+    @apply bg-[url(/assets/icon-warning.svg)] bg-no-repeat bg-right border-b-2 border-b-alert;
+  }
+}

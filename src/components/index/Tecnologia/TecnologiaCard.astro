@@ -1,0 +1,10 @@
+---
+const { technology, years } = Astro.props;
+---
+
+<article class="tablet:text-center">
+  <h3>{technology}</h3>
+  <span class="text-lg text-pale-gray mt-2"
+    >{years} {years != 1 ? "años" : "año"} de experiencia</span
+  >
+</article>

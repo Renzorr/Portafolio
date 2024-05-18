@@ -1,0 +1,48 @@
+<form action="" class="flex flex-col items-end">
+  <label for="nombre" class="sr-only">Nombre</label>
+  <input
+    type="text"
+    id="nombre"
+    class="pb-[17px] pt-[21px]"
+    placeholder="NOMBRE"
+  />
+  <label for="email" class="sr-only">Correo</label>
+  <input
+    type="email"
+    id="email"
+    class="pb-[17px] pt-[33px]"
+    placeholder="CORREO"
+  />
+  <label for="message" class="sr-only">Mensaje</label>
+  <input
+    type="text"
+    id="message"
+    class="pt-[33px] pb-[80px]"
+    placeholder="MENSAJE"
+  />
+  <button type="submit" class="btn-primary mt-[35px]">Enviar Mensaje</button>
+</form>
+
+<script>
+  const inputFields = document.querySelectorAll("input");
+  const contactForm = document.querySelector("form");
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let isFilled = true;
+
+    inputFields.forEach((inputField) => {
+      if (inputField.value === "") {
+        isFilled = false;
+        inputField.classList.add("alert");
+      } else {
+        inputField.classList.remove("alert");
+      }
+
+      if (isFilled) {
+        inputField.value = "";
+      }
+    });
+  });
+</script>

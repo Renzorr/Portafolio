@@ -1,0 +1,71 @@
+---
+import ProjectCard from "./ProyectoCard.astro";
+
+const PROJECTS = [
+    {
+      img: "/assets/thumbnail-project-1-large.webp",
+      name: "Design Portfolio",
+      stack: [{ name: "Html" }, { name: "Css" }, { name: "JavaScript" }],
+      website: "https://challenge-single-page-portafolio.netlify.app/",
+      repositoy: "https://github.com/Renzorr/Challenge-Single-page-portafolio",
+    },
+    {
+      img: "/assets/thumbnail-project-2-large.webp",
+      name: "E-Learning Landing Page",
+      stack: [{ name: "React" }, { name: "Tailwind CSS" }],
+      website: "https://challenge-elearning-landing-page.netlify.app/",
+      repositoy: "https://github.com/Renzorr/challenge-Elearning-Landing-Page",
+    },
+    {
+      img: "/assets/thumbnail-project-3-large.webp",
+      name: "Bookmark landing page",
+      stack: [{ name: "Astro" }, { name: "Tailwind CSS" }],
+      website: "https://strong-dodol-f6ddcc.netlify.app/",
+      repositoy: "https://github.com/Renzorr/challenge-Bookmark-Landing-Page",
+    },
+    {
+      img: "/assets/thumbnail-project-4-large.webp",
+      name: "Creative agency single page",
+      stack: [{ name: "Astro" }, { name: "Tailwind CSS" }],
+      website: "https://famous-rolypoly-e58411.netlify.app/",
+      repositoy: "https://github.com/Renzorr/challenge-creative-landing-page",
+    },
+    {
+      img: "/assets/thumbnail-project-5-large.webp",
+      name: "Insure landing page",
+      stack: [{ name: "Astro" }, { name: "Tailwind CSS" }],
+      website: "https://symphonious-chimera-1e6104.netlify.app/",
+      repositoy: "https://github.com/Renzorr/challenge-insure-landing-page",
+    },
+    {
+      img: "/assets/thumbnail-project-6-large.webp",
+      name: "Minimalist portfolio website",
+      stack: [{ name: "Astro" }, { name: "Css" }],
+      website: "https://legendary-concha-d70064.netlify.app/",
+      repositoy: "https://github.com/Renzorr/challenge-minimalist-portfolio",
+    },
+  ]
+---
+
+<section class="container mt-[124px]">
+  <div class="flex items-center justify-between mb-[60px]">
+    <h2>Proyectos</h2>
+  </div>
+  <div
+    class="grid grid-cols-project justify-between gap-y-[70px] gap-x-[20px] tablet:grid-cols-1"
+  >
+    {
+      PROJECTS.map((project) => {
+        return (
+          <ProjectCard
+            img={project.img}
+            name={project.name}
+            technology={project.stack}
+            repository={project.repositoy}
+            website={project.website}
+          />
+        );
+      })
+    }
+  </div>
+</section>
